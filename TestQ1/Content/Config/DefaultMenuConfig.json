@@ -1,0 +1,28 @@
+﻿[
+  {
+    "path": "/Home",
+    "component": "",
+    "name": "Dashboard",
+    "iconClass": "el-icon-message",
+    "children": [
+      {
+        "path": "/Home/Index",
+        "name": "主页",
+        "component": "",
+        "imgUrl": ""
+      },
+      {
+        "path": "/Home/About",
+        "name": "关于",
+        "component": "",
+        "imgUrl": ""
+      },
+      {
+        "path": "/Home/Contact",
+        "name": "联系人",
+        "component": "",
+        "imgUrl": ""
+      }
+    ]
+  }
+]

@@ -1,0 +1,48 @@
+﻿<header class="db-header" id="HeaderPartial">
+    @*<router-link class="logo" v-bind:to="{path: '/list/filters'}">IQG 投资交易中心后台</router-link>*@
+    <a class="logo">IQG 投资交易中心后台</a>
+    <div class="user-info" v-if="user.id">
+        <span v-text="user.username"></span>
+        <el-dropdown trigger="click">
+            <span class="el-dropdown-link">
+                <img v-bind:src="user.avatar">
+            </span>
+            <el-dropdown-menu slot="dropdown">
+                <el-dropdown-item>个人信息</el-dropdown-item>
+                <el-dropdown-item>设置</el-dropdown-item>
+                <el-dropdown-item @@click.native="logout">注销</el-dropdown-item>
+            </el-dropdown-menu>
+        </el-dropdown>
+    </div>
+</header>
+
+<script>
+    var appHeader = {
+        data() {
+            return {
+                user: {
+                    id: 'admin',
+                    username: '管理员',
+                    avatar: '/Avatar/favicon.ico'
+                }
+            };
+        },
+        methods: {
+            MenuEvents_select(key, keyPath) {
+                console.log(key, keyPath);
+            },
+            logout() {
+                this.$confirm('确定要注销吗?', '提示', {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'info'
+                }).then(() => {
+                    localStorage.removeItem('user');
+                    this.$router.push({ path: '/login' });
+                }).catch(() => { });
+            }
+        }
+    }
+    var Ctor = Vue.extend(appHeader)
+    new Ctor().$mount('#HeaderPartial')
+</script>

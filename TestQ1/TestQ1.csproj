@@ -1,0 +1,552 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D172D157-D7B0-44B5-A17E-43D7F1CB0F5C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestQ1</RootNamespace>
+    <AssemblyName>TestQ1</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\AppBreadcrumb.cs" />
+    <Compile Include="Utils\AppConstant.cs" />
+    <Compile Include="Utils\AppJsonFile.cs" />
+    <Compile Include="Utils\AppMenu.cs" />
+    <Compile Include="Utils\AppSettings.cs" />
+    <Compile Include="Utils\CommonJson.cs" />
+    <Compile Include="Utils\CommonLinq.cs" />
+    <Compile Include="Utils\MenuModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\element\alert.js" />
+    <Content Include="Content\element\autocomplete.js" />
+    <Content Include="Content\element\badge.js" />
+    <Content Include="Content\element\breadcrumb-item.js" />
+    <Content Include="Content\element\breadcrumb.js" />
+    <Content Include="Content\element\button-group.js" />
+    <Content Include="Content\element\button.js" />
+    <Content Include="Content\element\card.js" />
+    <Content Include="Content\element\carousel-item.js" />
+    <Content Include="Content\element\carousel.js" />
+    <Content Include="Content\element\cascader.js" />
+    <Content Include="Content\element\checkbox-button.js" />
+    <Content Include="Content\element\checkbox-group.js" />
+    <Content Include="Content\element\checkbox.js" />
+    <Content Include="Content\element\col.js" />
+    <Content Include="Content\element\collapse-item.js" />
+    <Content Include="Content\element\collapse.js" />
+    <Content Include="Content\element\color-picker.js" />
+    <Content Include="Content\element\date-picker.js" />
+    <Content Include="Content\element\dialog.js" />
+    <Content Include="Content\element\dropdown-item.js" />
+    <Content Include="Content\element\dropdown-menu.js" />
+    <Content Include="Content\element\dropdown.js" />
+    <Content Include="Content\element\element-ui.common.js" />
+    <Content Include="Content\element\form-item.js" />
+    <Content Include="Content\element\form.js" />
+    <Content Include="Content\element\icon.js" />
+    <Content Include="Content\element\index.js" />
+    <Content Include="Content\element\input-number.js" />
+    <Content Include="Content\element\input.js" />
+    <Content Include="Content\element\loading.js" />
+    <Content Include="Content\element\locale\format.js" />
+    <Content Include="Content\element\locale\index.js" />
+    <Content Include="Content\element\locale\lang\af-ZA.js" />
+    <Content Include="Content\element\locale\lang\bg.js" />
+    <Content Include="Content\element\locale\lang\ca.js" />
+    <Content Include="Content\element\locale\lang\cz.js" />
+    <Content Include="Content\element\locale\lang\da.js" />
+    <Content Include="Content\element\locale\lang\de.js" />
+    <Content Include="Content\element\locale\lang\ee.js" />
+    <Content Include="Content\element\locale\lang\el.js" />
+    <Content Include="Content\element\locale\lang\en.js" />
+    <Content Include="Content\element\locale\lang\es.js" />
+    <Content Include="Content\element\locale\lang\fa.js" />
+    <Content Include="Content\element\locale\lang\fi.js" />
+    <Content Include="Content\element\locale\lang\fr.js" />
+    <Content Include="Content\element\locale\lang\id.js" />
+    <Content Include="Content\element\locale\lang\it.js" />
+    <Content Include="Content\element\locale\lang\ja.js" />
+    <Content Include="Content\element\locale\lang\ko.js" />
+    <Content Include="Content\element\locale\lang\lv.js" />
+    <Content Include="Content\element\locale\lang\nb-NO.js" />
+    <Content Include="Content\element\locale\lang\nl.js" />
+    <Content Include="Content\element\locale\lang\pl.js" />
+    <Content Include="Content\element\locale\lang\pt-br.js" />
+    <Content Include="Content\element\locale\lang\pt.js" />
+    <Content Include="Content\element\locale\lang\ru-RU.js" />
+    <Content Include="Content\element\locale\lang\sk.js" />
+    <Content Include="Content\element\locale\lang\sl.js" />
+    <Content Include="Content\element\locale\lang\sv-SE.js" />
+    <Content Include="Content\element\locale\lang\ta.js" />
+    <Content Include="Content\element\locale\lang\th.js" />
+    <Content Include="Content\element\locale\lang\tk.js" />
+    <Content Include="Content\element\locale\lang\tr-TR.js" />
+    <Content Include="Content\element\locale\lang\ua.js" />
+    <Content Include="Content\element\locale\lang\vi.js" />
+    <Content Include="Content\element\locale\lang\zh-CN.js" />
+    <Content Include="Content\element\locale\lang\zh-TW.js" />
+    <Content Include="Content\element\menu-item-group.js" />
+    <Content Include="Content\element\menu-item.js" />
+    <Content Include="Content\element\menu.js" />
+    <Content Include="Content\element\message-box.js" />
+    <Content Include="Content\element\message.js" />
+    <Content Include="Content\element\mixins\emitter.js" />
+    <Content Include="Content\element\mixins\locale.js" />
+    <Content Include="Content\element\mixins\migrating.js" />
+    <Content Include="Content\element\notification.js" />
+    <Content Include="Content\element\option-group.js" />
+    <Content Include="Content\element\option.js" />
+    <Content Include="Content\element\pagination.js" />
+    <Content Include="Content\element\popover.js" />
+    <Content Include="Content\element\progress.js" />
+    <Content Include="Content\element\radio-button.js" />
+    <Content Include="Content\element\radio-group.js" />
+    <Content Include="Content\element\radio.js" />
+    <Content Include="Content\element\rate.js" />
+    <Content Include="Content\element\row.js" />
+    <Content Include="Content\element\scrollbar.js" />
+    <Content Include="Content\element\select.js" />
+    <Content Include="Content\element\slider.js" />
+    <Content Include="Content\element\spinner.js" />
+    <Content Include="Content\element\step.js" />
+    <Content Include="Content\element\steps.js" />
+    <Content Include="Content\element\submenu.js" />
+    <Content Include="Content\element\switch.js" />
+    <Content Include="Content\element\tab-pane.js" />
+    <Content Include="Content\element\table-column.js" />
+    <Content Include="Content\element\table.js" />
+    <Content Include="Content\element\tabs.js" />
+    <Content Include="Content\element\tag.js" />
+    <Content Include="Content\element\theme-default\alert.css" />
+    <Content Include="Content\element\theme-default\autocomplete.css" />
+    <Content Include="Content\element\theme-default\badge.css" />
+    <Content Include="Content\element\theme-default\base.css" />
+    <Content Include="Content\element\theme-default\breadcrumb-item.css" />
+    <Content Include="Content\element\theme-default\breadcrumb.css" />
+    <Content Include="Content\element\theme-default\button-group.css" />
+    <Content Include="Content\element\theme-default\button.css" />
+    <Content Include="Content\element\theme-default\card.css" />
+    <Content Include="Content\element\theme-default\carousel-item.css" />
+    <Content Include="Content\element\theme-default\carousel.css" />
+    <Content Include="Content\element\theme-default\cascader.css" />
+    <Content Include="Content\element\theme-default\checkbox-button.css" />
+    <Content Include="Content\element\theme-default\checkbox-group.css" />
+    <Content Include="Content\element\theme-default\checkbox.css" />
+    <Content Include="Content\element\theme-default\col.css" />
+    <Content Include="Content\element\theme-default\collapse-item.css" />
+    <Content Include="Content\element\theme-default\collapse.css" />
+    <Content Include="Content\element\theme-default\color-picker.css" />
+    <Content Include="Content\element\theme-default\date-picker.css" />
+    <Content Include="Content\element\theme-default\dialog.css" />
+    <Content Include="Content\element\theme-default\dropdown-item.css" />
+    <Content Include="Content\element\theme-default\dropdown-menu.css" />
+    <Content Include="Content\element\theme-default\dropdown.css" />
+    <Content Include="Content\element\theme-default\form-item.css" />
+    <Content Include="Content\element\theme-default\form.css" />
+    <Content Include="Content\element\theme-default\icon.css" />
+    <Content Include="Content\element\theme-default\index.css" />
+    <Content Include="Content\element\theme-default\input-number.css" />
+    <Content Include="Content\element\theme-default\input.css" />
+    <Content Include="Content\element\theme-default\loading.css" />
+    <Content Include="Content\element\theme-default\menu-item-group.css" />
+    <Content Include="Content\element\theme-default\menu-item.css" />
+    <Content Include="Content\element\theme-default\menu.css" />
+    <Content Include="Content\element\theme-default\message-box.css" />
+    <Content Include="Content\element\theme-default\message.css" />
+    <Content Include="Content\element\theme-default\notification.css" />
+    <Content Include="Content\element\theme-default\option-group.css" />
+    <Content Include="Content\element\theme-default\option.css" />
+    <Content Include="Content\element\theme-default\pagination.css" />
+    <Content Include="Content\element\theme-default\popover.css" />
+    <Content Include="Content\element\theme-default\progress.css" />
+    <Content Include="Content\element\theme-default\radio-button.css" />
+    <Content Include="Content\element\theme-default\radio-group.css" />
+    <Content Include="Content\element\theme-default\radio.css" />
+    <Content Include="Content\element\theme-default\rate.css" />
+    <Content Include="Content\element\theme-default\reset.css" />
+    <Content Include="Content\element\theme-default\row.css" />
+    <Content Include="Content\element\theme-default\scrollbar.css" />
+    <Content Include="Content\element\theme-default\select-dropdown.css" />
+    <Content Include="Content\element\theme-default\select.css" />
+    <Content Include="Content\element\theme-default\slider.css" />
+    <Content Include="Content\element\theme-default\spinner.css" />
+    <Content Include="Content\element\theme-default\step.css" />
+    <Content Include="Content\element\theme-default\steps.css" />
+    <Content Include="Content\element\theme-default\submenu.css" />
+    <Content Include="Content\element\theme-default\switch.css" />
+    <Content Include="Content\element\theme-default\tab-pane.css" />
+    <Content Include="Content\element\theme-default\table-column.css" />
+    <Content Include="Content\element\theme-default\table.css" />
+    <Content Include="Content\element\theme-default\tabs.css" />
+    <Content Include="Content\element\theme-default\tag.css" />
+    <Content Include="Content\element\theme-default\time-picker.css" />
+    <Content Include="Content\element\theme-default\time-select.css" />
+    <Content Include="Content\element\theme-default\tooltip.css" />
+    <Content Include="Content\element\theme-default\transfer.css" />
+    <Content Include="Content\element\theme-default\tree.css" />
+    <Content Include="Content\element\theme-default\upload.css" />
+    <Content Include="Content\element\time-picker.js" />
+    <Content Include="Content\element\time-select.js" />
+    <Content Include="Content\element\tooltip.js" />
+    <Content Include="Content\element\transfer.js" />
+    <Content Include="Content\element\transitions\collapse-transition.js" />
+    <Content Include="Content\element\tree.js" />
+    <Content Include="Content\element\umd\locale\af-ZA.js" />
+    <Content Include="Content\element\umd\locale\bg.js" />
+    <Content Include="Content\element\umd\locale\ca.js" />
+    <Content Include="Content\element\umd\locale\cz.js" />
+    <Content Include="Content\element\umd\locale\da.js" />
+    <Content Include="Content\element\umd\locale\de.js" />
+    <Content Include="Content\element\umd\locale\ee.js" />
+    <Content Include="Content\element\umd\locale\el.js" />
+    <Content Include="Content\element\umd\locale\en.js" />
+    <Content Include="Content\element\umd\locale\es.js" />
+    <Content Include="Content\element\umd\locale\fa.js" />
+    <Content Include="Content\element\umd\locale\fi.js" />
+    <Content Include="Content\element\umd\locale\fr.js" />
+    <Content Include="Content\element\umd\locale\id.js" />
+    <Content Include="Content\element\umd\locale\it.js" />
+    <Content Include="Content\element\umd\locale\ja.js" />
+    <Content Include="Content\element\umd\locale\ko.js" />
+    <Content Include="Content\element\umd\locale\lv.js" />
+    <Content Include="Content\element\umd\locale\nb-NO.js" />
+    <Content Include="Content\element\umd\locale\nl.js" />
+    <Content Include="Content\element\umd\locale\pl.js" />
+    <Content Include="Content\element\umd\locale\pt-br.js" />
+    <Content Include="Content\element\umd\locale\pt.js" />
+    <Content Include="Content\element\umd\locale\ru-RU.js" />
+    <Content Include="Content\element\umd\locale\sk.js" />
+    <Content Include="Content\element\umd\locale\sl.js" />
+    <Content Include="Content\element\umd\locale\sv-SE.js" />
+    <Content Include="Content\element\umd\locale\ta.js" />
+    <Content Include="Content\element\umd\locale\th.js" />
+    <Content Include="Content\element\umd\locale\tk.js" />
+    <Content Include="Content\element\umd\locale\tr-TR.js" />
+    <Content Include="Content\element\umd\locale\ua.js" />
+    <Content Include="Content\element\umd\locale\vi.js" />
+    <Content Include="Content\element\umd\locale\zh-CN.js" />
+    <Content Include="Content\element\umd\locale\zh-TW.js" />
+    <Content Include="Content\element\upload.js" />
+    <Content Include="Content\element\utils\clickoutside.js" />
+    <Content Include="Content\element\utils\date.js" />
+    <Content Include="Content\element\utils\dom.js" />
+    <Content Include="Content\element\utils\merge.js" />
+    <Content Include="Content\element\utils\popper.js" />
+    <Content Include="Content\element\utils\popup\index.js" />
+    <Content Include="Content\element\utils\popup\popup-manager.js" />
+    <Content Include="Content\element\utils\resize-event.js" />
+    <Content Include="Content\element\utils\scrollbar-width.js" />
+    <Content Include="Content\element\utils\shared.js" />
+    <Content Include="Content\element\utils\sync.js" />
+    <Content Include="Content\element\utils\util.js" />
+    <Content Include="Content\element\utils\vdom.js" />
+    <Content Include="Content\element\utils\vue-popper.js" />
+    <Content Include="Content\layout\bcmixin.css" />
+    <Content Include="Content\layout\bcmixin.min.css" />
+    <Content Include="Content\layout\_global.css" />
+    <Content Include="Content\layout\_global.min.css" />
+    <Content Include="Content\layout\_layout.css" />
+    <Content Include="Content\layout\_layout.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Config\DefaultMenuConfig.json" />
+    <Content Include="Content\element\theme-default\fonts\element-icons.ttf" />
+    <Content Include="Content\element\theme-default\fonts\element-icons.woff" />
+    <Content Include="Content\layout\bcmixin.scss" />
+    <Content Include="Content\layout\_global.scss" />
+    <Content Include="Content\layout\_layout.scss" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_HeaderPartial.cshtml" />
+    <Content Include="Views\Shared\_MenuPartial.cshtml" />
+    <Content Include="Views\Shared\_OhterPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IQG.Util\IQG.Util.csproj">
+      <Project>{6cdec9ae-1274-47ca-b4b8-7eb1ed929299}</Project>
+      <Name>IQG.Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2640</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2640/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此项目引用这台计算机上缺少的 NuGet 程序包。使用 NuGet 程序包还原可下载这些程序包。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

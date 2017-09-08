@@ -1,0 +1,60 @@
+﻿
+
+<aside class="db-menu-wrapper" id="MenuPartial">
+    <el-menu v-bind:default-active="activeMenu" v-bind:default-openeds="openedsMenu" class="db-menu-bar" v-bind:router="false" v-bind:unique-opened="true" v-on:select="selectMenu">
+        <template v-for="(route, index) in topMenuList">
+            <template v-if="route.children && route.name">
+                <el-submenu v-bind:index="route.name">
+                    <template slot="title">
+                        <i v-bind:class="route.iconClass"></i>{{route.name}}
+                    </template>
+                    <el-menu-item v-bind:index="cRoute.name" v-for="(cRoute, cIndex) in route.children" v-on:click="menuNav(route.name,cRoute.name,cRoute.path)" v-bind:route="cRoute">
+                        <a @*v-bind:href="cRoute.path" target="_self"*@>{{cRoute.name}}</a>
+                    </el-menu-item>
+                </el-submenu>
+            </template>
+            <template v-if="!route.children && route.name">
+                <el-menu-item v-bind:index="route.name" v-on:click="menuNav(route.name,cRoute.name,cRoute.path)" v-bind:route="route">
+                    <i v-bind:class="route.iconClass"></i>
+                    <a @*v-bind:href="route.path" target="_self"*@>{{route.name}}</a>
+                </el-menu-item>
+            </template>
+        </template>
+    </el-menu>
+</aside>
+
+<script>
+    var topMenuList = @Html.Raw(@IQGT_Web.Utils.AppMenu.GetMenuList()) ;
+    var activeMenu = '@IQGT_Web.Utils.AppMenu.activeMenu()' ;
+    var openedsMenu = '@IQGT_Web.Utils.AppMenu.openedsMenu()' ;
+
+    var appMenu = {
+
+            data() {
+                return {
+                    topMenuList: topMenuList,
+                    activeMenu: activeMenu,
+                    openedsMenu: [openedsMenu]
+                };
+            },
+
+            methods: {
+
+                menuNav(submenuIndex, index, href) {
+                    this.activeMenu = "index";
+                    this.openedsMenu = [submenuIndex];
+                    console.log(`展开的菜单:${submenuIndex};\n选中的菜单:${index};\n路径:${href}`);
+
+                    window.location.href = href + '?activeMenu=' + index + '&openedsMenu=' + submenuIndex;
+                },
+
+                selectMenu() {
+
+                }
+
+            }
+
+        }
+        var Ctor = Vue.extend(appMenu)
+        new Ctor().$mount('#MenuPartial')
+</script>
